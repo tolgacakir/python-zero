@@ -8,11 +8,10 @@ server_params = StdioServerParameters(
     env=None,  # Optional environment variables
 )
 
-
 async def run():
     async with stdio_client(server_params) as (read, write):
         async with ClientSession(
-            read, write, sampling_callback=handle_sampling_message
+            read, write
         ) as session:
             # Initialize the connection
             await session.initialize()

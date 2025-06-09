@@ -2,7 +2,6 @@ from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP(name="EchoServer", stateless_http=True)
 
-
 @mcp.tool(description="A simple reversed echo tool")
 def reversed_echo(message: str) -> str:
     return f"Reversed Echo: {message[::-1]}"
